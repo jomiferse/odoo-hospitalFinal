@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	 <data>
+	 	<record id="view_mfh_calculos_form_id" model="ir.ui.view">
+	 		<field name="name">sis_calculos_form</field>
+	 		<field name="model">sis.calculos</field>
+            <field name="type">form</field>
+            	<field name="arch" type="xml">
+                   <form string="calculos">
+                       <group>
+                           <field name="edad"/>
+                           <field name="peso"/>            
+                           <field name="altura"/>  
+                           <field name="imc"/>
+                           <field name="dni"/>
+                       </group>
+                   </form>                             	
+                </field>
+	    </record>
+
+        <record id="view_sis_calculos_tree_id" model="ir.ui.view">
+            <field name="name">sis_calculos_tree</field>
+            <field name="model">sis.calculos</field>
+            <field name="type">tree</field>
+                <field name="arch" type="xml">
+                   <tree string="calculos">
+                       <field name="edad"/>
+                       <field name="peso"/>
+                       <field name="altura"/>
+                       <field name="imc"/>
+                       <field name="dni"/>
+                   </tree>                              
+                </field>
+        </record>
+
+        <record id="action_sis_calculos" model="ir.actions.act_window">
+            <field name="name">calculos</field>
+            <field name="res_model">sis.calculos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_sis_informacion_calculos" name="Calculos" sequence="10" parent="menu_sis_informacion" action="action_sis_calculos"/>
+
+     </data>
+</odoo>

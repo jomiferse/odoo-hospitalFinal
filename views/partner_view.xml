@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	 <data>
+	 	<record id="inherit_respartner_hola_id" model="ir.ui.view">
+	 		<field name="name">res.partner.inherit</field>
+	 		<field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            	<field name="arch" type="xml">
+					<field name="website" position="after" >
+						<field name="rut" string="Rut:" placeholder="00000000-0" />
+						<field name="edad" string="Edad:" placeholder="45" />
+						<field name="profesion" string="Profesión:" placeholder="Ing Civil" />
+					</field>
+				</field>
+	    </record>
+		 <record id="action_sis_companero" model="ir.actions.act_window">
+            <field name="name">Usuarios/Empresas</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+		 <menuitem id="menu_sis_informacion_companero" name="Usuarios/Empresas" sequence="10" parent="menu_sis_informacion" action="action_sis_companero"/>
+     </data>
+</odoo>

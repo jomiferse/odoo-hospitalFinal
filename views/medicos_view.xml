@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	 	<record id="view_mfh_medicos_form_id" model="ir.ui.view">
+	 		<field name="name">sis_medicos_form</field>
+	 		<field name="model">sis.medicos</field>
+            <field name="type">form</field>
+            	<field name="arch" type="xml">
+                   <form string="medicos">
+                       <group>
+                           <field name="nombre"/>
+                           <field name="primer_apellido"/>
+                           <field name="segundo_apellido"/>
+                           <field name="foto"/>
+                           <field name="edad"/>
+                           <field name="peso"/>
+                           <field name="altura"/>
+                           <field name="imc"/>
+                           <field name="fecha_nacimiento"/>
+                           <field name="genero"/>
+                           <field name="nacionalidad"/>
+                           <field name="especialidad"/>
+                           <field name="dni"/>
+                           <field name="country_id"/>
+                       </group>
+                   </form>
+                </field>
+	    </record>
+
+        <record id="view_sis_medicos_tree_id" model="ir.ui.view">
+            <field name="name">sis_medicos_tree</field>
+            <field name="model">sis.medicos</field>
+            <field name="type">tree</field>
+                <field name="arch" type="xml">
+                   <tree string="medicos">
+                       <field name="nombre"/>
+                       <field name="primer_apellido"/>
+                       <field name="segundo_apellido"/>
+                       <field name="foto"/>
+                       <field name="edad"/>
+                       <field name="peso"/>
+                       <field name="altura"/>
+                       <field name="imc"/>
+                       <field name="fecha_nacimiento"/>
+                       <field name="genero"/>
+                       <field name="nacionalidad"/>
+                       <field name="especialidad"/>
+                       <field name="dni"/>
+                       <field name="country_id"/>
+                   </tree>
+                </field>
+        </record>
+
+        <record id="action_sis_medicos" model="ir.actions.act_window">
+            <field name="name">sis medicos</field>
+            <field name="res_model">sis.medicos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_sis_informacion" name="Información" sequence="10" parent="menu_sis"/>
+        <menuitem id="menu_sis_informacion_medicos" name="Médicos" sequence="10" parent="menu_sis_informacion" action="action_sis_medicos"/>
+    </data>
+</odoo>

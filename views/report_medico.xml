@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <report
+        id="report_medico"
+        model="sis.medicos"
+        string="Medicos"
+        report_type="qweb-pdf"
+        name="hospital.report_medicos_template"
+    />
+
+    <template id="report_medicos_template">
+        <div class="header" style="border-bottom: 2px solid black">
+            <h3 class="text-center">Listado de médicos</h3>
+        </div>
+        <div class="article">
+            <table class="table table-condensed table-bordered" style="width: 100%">
+                <thead>
+                    <th class="text-center" style="width: 20%">Nombre</th>
+                    <th class="text-center" style="width: 20%">Primer apellido</th>
+                    <th class="text-center" style="width: 20%">Segundo apellido</th>
+                    <th class="text-center" style="width: 20%">Edad</th>
+                    <th class="text-center" style="width: 20%">Peso</th>
+                    <th class="text-center" style="width: 20%">Altura</th>
+                    <th class="text-center" style="width: 20%">IMC</th>
+                    <th class="text-center" style="width: 20%">Fecha de nacimiento</th>
+                    <th class="text-center" style="width: 20%">Genero</th>
+                    <th class="text-center" style="width: 20%">Nacionalidad</th>
+                    <th class="text-center" style="width: 20%">Especialidad</th>
+                    <th class="text-center" style="width: 20%">DNI</th>
+                    <th class="text-center" style="width: 20%">País</th>
+                </thead>
+                <tbody>
+                    <t t-foreach="docs" t-as="doc">
+                        <tr>
+                            <td>
+                                <span t-esc="doc['nombre']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['primer_apellido']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['segundo_apellido']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['edad']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['peso']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['altura']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['imc']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['fecha_nacimiento']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['genero']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['nacionalidad']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['especialidad']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['dni']"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="doc['country_id']"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            <div class="row text-center" style="border-top: 1px solid black;">
+                <div class="col-xs-3 col-xs-offset-9 text-right">
+                    <ul class="list-inline" style="margin-top:10px;">
+                        <li>Page:</li>
+                        <li>
+                            <span class="page"/>
+                        </li>
+                        <li>/</li>
+                        <li>
+                            <span class="topage"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

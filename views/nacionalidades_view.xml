@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	 <data>
+	 	<record id="view_mfh_nacionalidades_form_id" model="ir.ui.view">
+	 		<field name="name">sis_nacionalidades_form</field>
+	 		<field name="model">sis.nacionalidades</field>
+            <field name="type">form</field>
+            	<field name="arch" type="xml">
+                   <form string="nacionalidades">
+                       <group>
+                           <field name="nombre"/>                           
+                       </group>
+                   </form>                             	
+                </field>
+	    </record>
+
+        <record id="view_sis_nacionalidades_tree_id" model="ir.ui.view">
+            <field name="name">sis_nacionalidades_tree</field>
+            <field name="model">sis.nacionalidades</field>
+            <field name="type">tree</field>
+                <field name="arch" type="xml">
+                   <tree string="nacionalidades">
+                           <field name="nombre"/>                       
+                   </tree>                              
+                </field>
+        </record>
+
+        <record id="action_sis_nacionalidades" model="ir.actions.act_window">
+            <field name="name">Nacionalidades</field>
+            <field name="res_model">sis.nacionalidades</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_sis_informacion_nacionalidades" name="Nacionalidades" sequence="10" parent="menu_sis_informacion" action="action_sis_nacionalidades"/>
+
+     </data>
+</odoo>
